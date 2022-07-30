@@ -1,0 +1,31 @@
+// https://aka.ms/devcontainer.json
+{
+	"name": "Hotel Booking",
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"service": "laravel.test",
+	"workspaceFolder": "/var/www/html",
+	"settings": {
+    "php.validate.executablePath": "/usr/bin/php",
+    "blade.format.enable": true,
+    "[blade]": {
+      "editor.defaultFormatter": "onecentlin.laravel-blade"
+    },
+    "[php]": {
+      "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    }
+  },
+	"extensions": [
+		"onecentlin.laravel-blade",
+		"bmewburn.vscode-intelephense-client",
+		"EditorConfig.EditorConfig",
+		"esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss"
+	],
+	"remoteUser": "sail",
+	"postCreateCommand": "chown -R 1000:1000 /var/www/html",
+  "shutdownAction": "stopCompose"
+	// "forwardPorts": [],
+	// "runServices": [],
+}
